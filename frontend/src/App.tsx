@@ -1,13 +1,29 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import Button from "@mui/material/Button";
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import Button from '@mui/material/Button';
+import SaveIcon from '@mui/icons-material/Save';
+import DeleteIcon from '@mui/icons-material/Delete';
+import Checkbox from '@mui/icons-material/Checkbox';
+
+function CheckboxExample() {
+  return <div>Test</div>;
+}
 
 function App() {
   return (
     <div className='App'>
       <header className='App-header'>
-        <Button variant='contained'>Hello World</Button>
+        <CheckboxExample />
+        <ButtonGroup size='large' variant='contained'>
+          <Button startIcon={<SaveIcon />} color='primary'>
+            Save
+          </Button>
+          <Button startIcon={<DeleteIcon />} color='secondary'>
+            Discard
+          </Button>
+        </ButtonGroup>
         <img src={logo} className='App-logo' alt='logo' />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
