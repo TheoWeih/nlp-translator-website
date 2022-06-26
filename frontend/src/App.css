@@ -37,3 +37,8 @@
     transform: rotate(360deg);
   }
 }
+
+.textField {
+  height: 0;
+  padding-bottom: 41.25%;
+}

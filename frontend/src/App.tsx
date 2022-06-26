@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './styles.css';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
 import SaveIcon from '@mui/icons-material/Save';
@@ -15,7 +16,6 @@ import 'fontsource-roboto';
 
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 
@@ -24,14 +24,24 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 
+import TextareaAutosize from '@mui/base/TextareaAutosize';
+import Box from '@mui/material/Box';
+
 const theme = createTheme({
   typography: {
     h2: {
       fontSize: 36,
-      marginBottom: 15,
+      marginBottom: 13,
+    },
+    subtitle1: {
+      marginBottom: 24,
     },
   },
-  palette: {},
+  palette: {
+    secondary: {
+      main: '#E33E7F',
+    },
+  },
 });
 
 function CheckboxExample() {
@@ -57,66 +67,48 @@ function CheckboxExample() {
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Container maxWidth='sm'>
-        <div className='App'>
-          <header className='App-header'>
-            <AppBar position='fixed' color='secondary'>
-              <Toolbar>
-                <IconButton>
-                  <MenuIcon></MenuIcon>
-                </IconButton>
-                <Typography variant='h6'>MUI Themeing</Typography>
-                <Button>Login</Button>
-              </Toolbar>
-            </AppBar>
-            <Typography variant='h2'>Welcome to MUI</Typography>
-            <Typography variant='subtitle1'>
-              Learn how to use Material UI
-            </Typography>
-            {/* <TextField
+      <div className='App'>
+        <header className='App-header'>
+          <AppBar position='fixed' color='primary'>
+            <Toolbar>
+              <IconButton>
+                <MenuIcon></MenuIcon>
+              </IconButton>
+              <Typography variant='h6'>Some App Name</Typography>
+            </Toolbar>
+          </AppBar>
+          <Typography variant='h2'>Learning languages the easy way</Typography>
+          <Typography variant='subtitle1'>
+            Find out which words are important and understand texts faster
+          </Typography>
+
+          <div>
+            <TextField
               variant='filled'
-              color='secondary'
-              type='email'
-              label='E-Mail'
-              placeholder='John@Doe.com'
-            /> */}
-            <Grid container spacing={2} justifyContent='center'>
-              <Grid item xs={3} sm={6}>
-                <Paper style={{ height: 75, width: '100%' }}></Paper>
-              </Grid>
-              <Grid item xs={3} sm={6}>
-                <Paper style={{ height: 75, width: '100%' }}></Paper>
-              </Grid>
-              <Grid item xs={3} sm={6}>
-                <Paper style={{ height: 75, width: '100%' }}></Paper>
-              </Grid>
-            </Grid>
+              label='Text in foreign language'
+              multiline
+              rows='15'
+              style={{
+                width: 400,
+                marginLeft: 24,
+                backgroundColor: 'white',
+              }}
+            />
 
-            <CheckboxExample />
-
-            <ButtonGroup size='large' variant='contained'>
-              <Button startIcon={<SaveIcon />} color='primary'>
-                Save
-              </Button>
-              <Button startIcon={<DeleteIcon />} color='secondary'>
-                Discard
-              </Button>
-            </ButtonGroup>
-            {/* <img src={logo} className='App-logo' alt='logo' /> */}
-            {/* <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p> */}
-            {/* <a
-            className='App-link'
-            href='https://reactjs.org'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Learn React
-          </a> */}
-          </header>
-        </div>
-      </Container>
+            <TextField
+              variant='filled'
+              label='Translated text in english'
+              multiline
+              rows='15'
+              style={{
+                width: 400,
+                marginLeft: 24,
+                backgroundColor: 'white',
+              }}
+            />
+          </div>
+        </header>
+      </div>
     </ThemeProvider>
   );
 }
